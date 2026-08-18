@@ -44,12 +44,9 @@ P — Plano / Conduta
 
 
 def logo_data_uri() -> str:
-    """Return the uploaded brand logo as an inline image for the custom header."""
-    logo_path = Path(__file__).resolve().parent / "attached_assets" / "l_1787004079391.png"
-    if not logo_path.exists():
-        raise FileNotFoundError(f"Logo não encontrada: {logo_path}")
-    encoded_logo = base64.b64encode(logo_path.read_bytes()).decode("ascii")
-    return f"data:image/png;base64,{encoded_logo}"
+   def logo_data_uri() -> str:
+    """Return an empty string if no logo is provided."""
+    return ""
 
 
 def inject_styles() -> None:
